@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Zensa</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- UNIQUE CONTACT CSS (won’t affect navbar/footer) -->
+  <style>
+    .contact-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+      animation: contactFadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes contactFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-title {
+      text-align: center;
+      font-size: 45px;
+      font-weight: 700;
+      color: #ff2e63;
+      margin-bottom: 10px;
+    }
+
+    .contact-subtitle {
+      text-align: center;
+      font-size: 17px;
+      color: #bbbbbb;
+      margin-bottom: 50px;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      justify-content: center;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 40px;
+      border-radius: 18px;
+      width: 48%;
+      min-width: 320px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(255, 0, 90, 0.3);
+    }
+
+    .contact-card h2 {
+      color: #ff2e63;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .contact-info-item {
+      margin-bottom: 18px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0.9;
+    }
+
+    .contact-info-item i {
+      color: #ff2e63;
+      font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 14px;
+      color: #111;
+      font-size: 15px;
+      margin-bottom: 18px;
+      transition: 0.25s ease;
+      border-color: #ff1e5d !important;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #ff2e63;
+      box-shadow: 0 0 10px #ff2e63;
+      outline: none;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff2e63, #ff577f);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .contact-form button:hover {
+      background: linear-gradient(135deg, #ff1e5d, #ff3c75);
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px #ff2e63;
+    }
+
+    .contact-faq-box {
+      background: #fff;
+      margin-top: 50px;
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    .contact-faq-box h2 {
+      margin-bottom: 20px;
+      color: #ff2e63;
+    }
+
+    .contact-faq-item {
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 850px) {
+      .contact-card {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <!-- ======================= Navbar ============================= -->
+  <style>
+    /* keep your entire CSS here (unchanged) */
+  </style>
+
+  <nav>
+    <div class="logo">
+      <img src="img/fav.png" alt="Brand Logo" />
+      <div class="logo-text"><span>Zen</span>sa</div>
+    </div>
+
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="createAds.html">My Ads</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Our Pricing</a>
+      <a href="contact.html">Contact US</a>
+
+      <div class="dropdown" id="loginDropdown">
+        <button class="dropbtn">
+          <i class="ri-user-line"></i> <span id="loginText">Login</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+          <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+        </div>
+      </div>
+
+      <div class="user-info" id="userInfo" style="display:none;">
+        <i class="ri-user-line"></i> <span id="userName"></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+      <button class="create-btn" onclick="openCreateAd()">
+        Create Ad
+      </button>
+
+    </div>
+  </nav>
+
+
+  <div class="contact-container">
+
+    <h1 class="contact-title">Contact Zensa Support</h1>
+    <p class="contact-subtitle">Our team responds fast — usually within 5–10 minutes.</p>
+
+    <div class="contact-wrapper">
+
+      <div class="contact-card">
+        <h2>📌 Quick Info</h2>
+
+        <div class="contact-info-item"><i>📧</i> majidali98765432188888@gmail.com</div>
+        <!-- <div class="contact-info-item"><i>📞</i> +92 300 1234567</div> -->
+        <div class="contact-info-item"><i>⏳</i> 24/7 Support</div>
+        <div class="contact-info-item"><i>📍</i> Lahore | Karachi | Islamabad</div>
+
+        <h2 style="margin-top:30px;">❓ Quick Questions</h2>
+        <p class="contact-info-item"><b>• How to post an ad?</b> Click “Create Ad”.</p>
+        <p class="contact-info-item"><b>• Why is my ad not showing?</b> It's under review.</p>
+        <p class="contact-info-item"><b>• What is Premium?</b> Boosts visibility 10x.</p>
+      </div>
+
+      <div class="contact-card">
+        <h2>✉️ Send Us a Message</h2>
+
+        <form id="contactForm" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Email Address" required />
+          <input type="text" name="phone" placeholder="Phone Number" />
+          <textarea name="message" placeholder="Write your message..." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="contact-faq-box">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="contact-faq-item"><b>Q:</b> How fast do we reply?<br>
+        <b>A:</b> Within a few minutes.
+      </div>
+
+      <div class="contact-faq-item"><b>Q:</b> Why Premium?<br>
+        <b>A:</b> Boosts visibility up to 10x.
+      </div>
+
+      <div class="contact-faq-item"><b>Q:</b> Can I edit my ads?<br>
+        <b>A:</b> Yes, anytime from “My Ads”.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        message: this.message.value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbx2Gi44PxpFaxbVq3LcJe3JD2kgQGHxkCmcbLl-7WT2zxhdg7dcSycdzPsgUp18Wx6qmg/exec", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .then(response => {
+          alert("Your message has been sent successfully!");
+          this.reset();
+        })
+        .catch(err => {
+          alert("❌ Error sending message! Please try again.");
+          console.error(err);
+        });
+    });
+  </script>
+
+
+
+  <!-- =================== Footer =================== -->
+  <!-- ============================== FOOTER SECTION ============================== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- About / Info -->
+      <div class="footer-col">
+        <h3>About Zensa</h3>
+        <ul>
+          <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+          <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+          <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+          <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+          <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3>Contact & Sitemap</h3>
+        <ul>
+          <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+          <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+        </ul>
+      </div>
+
+      <!-- Account -->
+      <div class="footer-col">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+          <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+        </ul>
+      </div>
+
+      <!-- Pricing -->
+      <div class="footer-col">
+        <h3>Pricing</h3>
+        <ul>
+          <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+        <a href="#">DMCA.com Protection Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

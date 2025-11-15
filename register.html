@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensa | Create Your Account</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e63946;
+      --bg-dark: #0f0f0f;
+      --bg-light: #1c1c1c;
+      --text-light: #fff;
+      --text-gray: #aaa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));
+      color: var(--text-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .register-container {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 45px 35px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 1.9rem;
+      font-weight: 700;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: var(--text-gray);
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      outline: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .password-hint {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+      text-align: left;
+      margin-top: -10px;
+      line-height: 1.4;
+    }
+
+    .password-strength {
+      height: 6px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .password-bar {
+      height: 6px;
+      width: 0%;
+      background: #ff3b30;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      background: var(--primary);
+      border: none;
+      padding: 12px;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff4d5a;
+      transform: translateY(-1.5px);
+    }
+
+    .message {
+      display: none;
+      font-size: 0.9rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .success { color: #2ecc71; }
+    .error { color: #e74c3c; }
+
+    .register-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .register-text a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .register-text a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      .register-container {
+        padding: 35px 25px;
+        border-radius: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="register-container">
+    <h2>Welcome to Zensa</h2>
+    <p class="subtitle">Create your secure account 🚀</p>
+
+    <form id="register-form">
+      <div class="form-group">
+        <i class="ri-user-line"></i>
+        <input type="text" id="name" placeholder="Full Name" required>
+      </div>
+
+      <div class="form-group">
+        <i class="ri-phone-line"></i>
+        <input type="tel" id="phone" placeholder="Phone Number" required pattern="[0-9]{10,}">
+      </div>
+
+      <div class="form-group">
+        <i class="ri-mail-line"></i>
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="form-group">
+        <i class="ri-lock-2-line"></i>
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <div class="password-strength"><div id="bar" class="password-bar"></div></div>
+      <p id="hint" class="password-hint">Use 8+ characters, one uppercase, one number & symbol.</p>
+
+      <button type="submit" class="btn">Create Account</button>
+    </form>
+
+    <div id="responseMsg" class="message"></div>
+
+    <p class="register-text">
+      Already have an account? <a href="login.html">Login Now</a>
+    </p>
+  </div>
+
+<script>
+  const form = document.getElementById("register-form");
+  const password = document.getElementById("password");
+  const bar = document.getElementById("bar");
+  const hint = document.getElementById("hint");
+  const msg = document.getElementById("responseMsg");
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzXFSguh67IXSC2e2zE7mqZkuVcxU-b8qRqwK2HmQL-I914Toh03c8TApRdw2VIhBKZFQ/exec";
+
+  // Password strength indicator
+  password.addEventListener("input", () => {
+    const val = password.value;
+    let strength = 0;
+    if (val.length >= 8) strength++;
+    if (/[A-Z]/.test(val)) strength++;
+    if (/[0-9]/.test(val)) strength++;
+    if (/[@#$%^&*!]/.test(val)) strength++;
+
+    const colors = ["#ff3b30", "#ff9500", "#ffcc00", "#34c759"];
+    bar.style.width = `${(strength / 4) * 100}%`;
+    bar.style.background = colors[strength - 1] || "#ff3b30";
+
+    if (strength < 2) hint.textContent = "Weak password ⚠️";
+    else if (strength < 4) hint.textContent = "Good, but add more strength 💪";
+    else hint.textContent = "Strong password ✅";
+  });
+
+ // Store password in plain text (no encryption)
+async function hashPassword(password) {
+  // Simply return the entered password directly
+  return password;
+}
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.style.display = "block";
+    msg.className = "message";
+    msg.textContent = "🔒 Securing your data...";
+
+    const hashedPassword = await hashPassword(password.value);
+    const user = {
+      action: "signup",
+      name: document.getElementById("name").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      password: hashedPassword
+    };
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(user)
+      });
+      const result = await response.json();
+
+      if (result.result === "email_exists") {
+        msg.textContent = "⚠️ This email is already registered.";
+        msg.className = "message error";
+        return;
+      }
+
+      if (result.result === "phone_exists") {
+        msg.textContent = "⚠️ This phone number is already registered.";
+        msg.className = "message error";
+        return;
+      }
+
+      if (result.result === "success") {
+        msg.textContent = "✅ Account created successfully! Redirecting...";
+        msg.className = "message success";
+        localStorage.setItem("zensaUser", JSON.stringify({ name: user.name, email: user.email }));
+        setTimeout(() => window.location.href = "index.html", 1500);
+      } else {
+        msg.textContent = "❌ Something went wrong. Try again.";
+        msg.className = "message error";
+      }
+    } catch {
+      msg.textContent = "❌ Connection error. Please check your internet.";
+      msg.className = "message error";
+    }
+  });
+</script>
+
+</body>
+</html>

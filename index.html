@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Navbar</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Remix Icon for professional UI icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- =======================  Navbar   ============================= -->
+    <!-- ======================= Navbar ============================= -->
+    <style>
+        /* keep your entire CSS here (unchanged) */
+    </style>
+
+    <nav>
+        <div class="logo">
+            <img src="img/fav.png" alt="Brand Logo" />
+            <div class="logo-text"><span>Zen</span>sa</div>
+        </div>
+
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="createAds.html">My Ads</a>
+            <a href="about.html">About Us</a>
+            <a href="pricing.html">Our Pricing</a>
+            <a href="contact.html">Contact US</a>
+
+            <div class="dropdown" id="loginDropdown">
+                <button class="dropbtn">
+                    <i class="ri-user-line"></i> <span id="loginText">Login</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+                    <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+                </div>
+            </div>
+
+            <div class="user-info" id="userInfo" style="display:none;">
+                <i class="ri-user-line"></i> <span id="userName"></span>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+
+            <button class="create-btn" onclick="openCreateAd()">
+                Create Ad
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- ===================== Hero section ================================= -->
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero-section" style="background: url('img/header.jpg') center/cover no-repeat; 
+         min-height: 60vh; 
+         display: flex; 
+         align-items: center; 
+         justify-content: center; 
+         text-align: center; 
+         color: white;">
+
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>PAKISTAN'S <span>LARGEST MARKETPLACE</span></h1>
+            <p>You can buy, sell anything you can think of.</p>
+
+            <div class="search-section">
+                <div class="search-container">
+                    <form class="search-bar">
+
+                        <input type="text" placeholder="What are you looking for?" required />
+                        <input type="text" placeholder="Where" required />
+                        <button class="search-btn" type="submit">
+                            <i class="ri-search-line"></i> Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <style>
+                /* ============================== BASE CONTAINER ============================== */
+                .search-section {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /* padding: 60px 20px; */
+                    /* background: #f8f9fa; */
+                    font-family: "Poppins", sans-serif;
+                }
+
+                /* ============================== SEARCH BAR ============================== */
+                .search-container {
+                    width: 100%;
+                    max-width: 1000px;
+                }
+
+                .search-bar {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 12px;
+                    background: #fff;
+                    padding: 15px 18px;
+                    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                }
+
+                .search-bar:hover {
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+                }
+
+                /* ============================== INPUTS ============================== */
+                .search-bar input {
+                    border: 1px solid #ddd;
+                    padding: 12px 15px;
+                    font-size: 0.95rem;
+                    color: #333;
+                    background: #fff;
+                    outline: none;
+                    height: 46px;
+                    transition: all 0.25s ease;
+                }
+
+                .search-bar input:focus {
+                    border-color: #e63946;
+                    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.15);
+                }
+
+                /* ============================== BUTTON ============================== */
+                .search-btn {
+                    border: none;
+                    background: #e63946;
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 46px;
+                    transition: all 0.3s ease;
+                    letter-spacing: 0.3px;
+                }
+
+                .search-btn i {
+                    margin-right: 8px;
+                    font-size: 1.1rem;
+                }
+
+                .search-btn:hover {
+                    background: #ff4d5a;
+                    box-shadow: 0 3px 10px rgba(230, 57, 70, 0.3);
+                    transform: translateY(-1px);
+                }
+
+                /* ============================== RESPONSIVE ============================== */
+                @media (max-width: 992px) {
+                    .search-bar {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .search-bar {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 550px) {
+                    .search-bar {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .search-btn {
+                        width: 100%;
+                    }
+                }
+            </style>
+
+            <!-- Remix Icon CDN -->
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+
+
+        </div>
+    </section>
+
+
+
+    <!-- ====================== category ============================= -->
+
+    <!-- 🛍️ BROWSE BY CATEGORY SECTION -->
+    <section class="categories">
+        <div class="container">
+            <h2>Browse by Province / City</h2>
+            <p class="subtitle">Select your city and choose the service you need, then search to get the best results.
+            </p>
+
+            <div class="category-grid">
+                <a href="#hero" class="category-card">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Punjab</h3>
+                </a>
+
+                <a href="#hero" class="category-card">
+                    <i class="fa-solid fa-car"></i>
+                    <h3>Sindh</h3>
+                </a>
+
+                <a href="#hero" class="category-card">
+                    <i class="fa-solid fa-house"></i>
+                    <h3> (KPK)</h3>
+                </a>
+
+                <a href="#hero" class="category-card">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>Balochistan</h3>
+                </a>
+
+
+            </div>
+    </section>
+
+
+    <!-- ============================== main section========================= -->
+    <section class="featured">
+        <div class="container">
+            <h2>🔥 Featured Services</h2>
+            <p class="subtitle">Discover top-rated ads from trusted sellers</p>
+
+            <div id="featuredGrid" class="featured-grid"></div>
+
+            <div style="text-align:center; margin-top:25px;">
+                <button id="loadMoreBtn" class="load-btn">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== CARD TEMPLATE ============================== -->
+    <div id="featuredGrid"></div>
+
+
+    <template id="cardTemplate">
+        <a href="#" class="gig-card">
+            <div class="gig-image">
+                <img class="card-img" src="img/header.jpg" alt="Service Image">
+                <span class="badge">Top Rated</span>
+            </div>
+
+            <div class="gig-body">
+                <div class="seller-info">
+                    <img src="img/profile.png" alt="User" class="seller-img">
+                    <div>
+                        <span class="seller-name">Seller Name</span>
+                        <span class="seller-level">Verified Seller</span>
+                    </div>
+                </div>
+
+                <p class="card-desc">I will create a professional video ad for your brand</p>
+
+                <div class="card-extra">
+                    <p class="card-location"><i class="ri-map-pin-line"></i> Sahiwal</p>
+                    <p class="card-contact"><i class="ri-phone-line"></i> 0300-1234567</p>
+                </div>
+
+                <div class="price-row">
+                    <span class="price-text">Starting at PKR <span class="card-price">100</span></span>
+                </div>
+            </div>
+        </a>
+    </template>
+
+    <!-- ============================== STYLES ============================== -->
+    <style>
+        .featured {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .featured h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .featured .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(270px, 1fr));
+            /* 🟢 Cards stay wide and beautiful */
+            gap: 25px;
+            width: 90%;
+            margin: 0 auto;
+            /* 🟢 Center the entire grid */
+        }
+
+
+        .gig-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eaeaea;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+
+        }
+
+        .gig-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .gig-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gig-image img {
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gig-card:hover .gig-image img {
+            transform: scale(1.05);
+        }
+
+        .gig-image .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(90deg, #ff4d4d, #ff7676);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        .gig-body {
+            padding: 10px 18px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+
+        .seller-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .seller-img {
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            /* border: 2px solid #ff4d4d; */
+            box-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
+            object-fit: cover;
+        }
+
+        .seller-name {
+            display: block;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .seller-level {
+            color: #888;
+            font-size: 0px;
+        }
+
+        .card-desc {
+            font-size: 0.92rem;
+            color: #555;
+            margin: 0;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* 🔹 show only 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-extra {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card-extra p {
+            margin: 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-extra i {
+            color: #ff4d4d;
+        }
+
+        .price-row {
+            text-align: right;
+        }
+
+        .price-text {
+            background: #ff4d4d;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .load-btn {
+            padding: 12px 28px;
+            background: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .load-btn:hover {
+            background: #e63b3b;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <style>
+        .card-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Only 2 lines visible */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style> 
+    <!-- ============================== SCRIPT ============================== -->
+  <script>
+        const SHEET_ID = "1P7umDBf6nsHE9Fj2oWFbOpddGSygEiSZtNI23xShR4M";
+        const SHEET_NAME = "Sheet2";
+        const API_URL = `https://opensheet.elk.sh/${SHEET_ID}/${SHEET_NAME}`;
+
+        const grid = document.getElementById("featuredGrid");
+        const template = document.getElementById("cardTemplate");
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
+        const searchForm = document.querySelector(".search-bar");
+
+        let allCards = [];
+        let filteredCards = [];
+        let visibleCount = 6;
+        const loadStep = 3;
+
+        /* ======================================
+           LOGIN CHECK FUNCTION (NEW)
+        ====================================== */
+        function isLoggedIn() {
+            return sessionStorage.getItem("loggedIn") === "true";
+        }
+
+        async function loadCards() {
+            try {
+                const res = await fetch(API_URL);
+                const rows = await res.json();
+                allCards = rows;
+                filteredCards = [...allCards];
+                renderCards();
+            } catch (err) {
+                console.error("❌ Error loading cards:", err);
+                grid.innerHTML = "<p style='text-align:center;color:red;'>Error loading cards.</p>";
+            }
+        }
+
+        loadMoreBtn.addEventListener("click", () => {
+            visibleCount += loadStep;
+            renderCards();
+        });
+
+        function renderCards() {
+            grid.innerHTML = "";
+            const visibleCards = filteredCards.slice(0, visibleCount);
+
+            if (visibleCards.length === 0) {
+                grid.innerHTML = `<p style="text-align:center; color:#777;">No matching ads found.</p>`;
+                loadMoreBtn.style.display = "none";
+                return;
+            }
+
+            visibleCards.forEach((data, i) => {
+                const realIndex = allCards.indexOf(data);
+                const card = template.content.cloneNode(true);
+
+                const cardLink = card.querySelector("a");
+
+                /* ======================================
+                   CARD CLICK REDIRECT (NEW)
+                ====================================== */
+                cardLink.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    if (!isLoggedIn()) {
+                        // Redirect to register if not logged in
+                        window.location.href = "register.html";
+                    } else {
+                        // Open the details page if logged in
+                        window.location.href = `details.html?id=${realIndex}`;
+                    }
+                });
+
+                // Format phone number
+                let contact = data.Phone || "N/A";
+                if (contact !== "N/A") {
+                    contact = contact.trim();
+                    if (!contact.startsWith("+92")) {
+                        contact = "+92" + contact.replace(/^0/, "");
+                    }
+                }
+
+                // Fill card
+                card.querySelector(".seller-name").textContent = data.Title || "Untitled Ad";
+                card.querySelector(".seller-level").textContent = data.Category || "Category";
+                card.querySelector(".badge").textContent = data.City || "City";
+                card.querySelector(".card-desc").textContent = data.Description || "";
+                card.querySelector(".card-price").textContent = data.Price || "N/A";
+                card.querySelector(".card-location").innerHTML = `<i class='ri-map-pin-line'></i> ${data.City}`;
+                card.querySelector(".card-contact").innerHTML = `<i class='ri-phone-line'></i> ${contact}`;
+
+                const imgUrl = data["Image URL"] && data["Image URL"].trim() !== ""
+                    ? data["Image URL"]
+                    : "https://via.placeholder.com/400x250?text=No+Image";
+
+                card.querySelector(".card-img").src = imgUrl;
+
+                grid.appendChild(card);
+            });
+
+            loadMoreBtn.style.display = visibleCount >= filteredCards.length ? "none" : "inline-block";
+        }
+
+        // SEARCH
+        searchForm.addEventListener("submit", e => {
+            e.preventDefault();
+
+            const query = document.querySelector('.search-bar input[placeholder="What are you looking for?"]').value.toLowerCase().trim();
+            const location = document.querySelector('.search-bar input[placeholder="Where"]').value.toLowerCase().trim();
+
+            filteredCards = allCards.filter(card => {
+                const title = (card.Title || "").toLowerCase();
+                const desc = (card.Description || "").toLowerCase();
+                const city = (card.City || "").toLowerCase();
+                const tags = (card.Tags || "").toLowerCase();
+
+                return (
+                    (!query || title.includes(query) || desc.includes(query) || tags.includes(query)) &&
+                    (!location || city.includes(location))
+                );
+            });
+
+            visibleCount = 6;
+            renderCards();
+        });
+
+        loadCards();
+    </script> 
+
+
+
+
+    <!-- =================== Footer =================== -->
+    <!-- ============================== FOOTER SECTION ============================== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- About / Info -->
+            <div class="footer-col">
+                <h3>About Zensa</h3>
+                <ul>
+                    <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+                    <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+                    <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+                    <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+                    <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col">
+                <h3>Contact & Sitemap</h3>
+                <ul>
+                    <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+                    <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Account -->
+            <div class="footer-col">
+                <h3>My Account</h3>
+                <ul>
+                    <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+                    <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+                </ul>
+            </div>
+
+            <!-- Pricing -->
+            <div class="footer-col">
+                <h3>Pricing</h3>
+                <ul>
+                    <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+                <a href="#">DMCA.com Protection Status</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
