@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensa | Terms & Conditions</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hero-01 {
+      background: #111 !important;
+      color: #e63946;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+
+    .hero-01 h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-01 p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .terms-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 60px;
+    }
+
+    .terms-content h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.6rem;
+      color: #111;
+      margin: 50px 0 15px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .terms-content h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #e63946;
+      margin-top: 8px;
+    }
+
+    .terms-content p,
+    .terms-content li {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .terms-content ul {
+      margin-left: 25px;
+      margin-top: 10px;
+      list-style: disc;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 70px 30px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="img/fav.png" alt="Brand Logo" />
+      <div class="logo-text"><span>Zen</span>sa</div>
+    </div>
+
+    <button class="menu-toggle">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="createAds.html">My Ads</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Our Pricing</a>
+      <a href="contact.html">Contact US</a>
+
+      <div class="dropdown" id="loginDropdown">
+        <button class="dropbtn">
+          <i class="ri-user-line"></i> <span id="loginText">Login</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+          <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+        </div>
+      </div>
+
+      <button class="create-btn" onclick="openCreateAd()">
+        Create Ad
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-01">
+    <h1>Terms & Conditions</h1>
+    <p> Please read carefully before using Zensa • Updated November 2025 </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="terms-content">
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using Zensa, you agree to follow these Terms & Conditions. If you do not agree, you must stop
+      using the website immediately.</p>
+
+    <h2>2. About Zensa</h2>
+    <p>Zensa is an online marketplace in Pakistan where users can buy and sell services. We help connect buyers and
+      sellers, but we do not control or guarantee any service provided by users.</p>
+
+    <h2>3. User Accounts</h2>
+    <ul>
+      <li>You must provide accurate and real information when registering.</li>
+      <li>Fake accounts, duplicate accounts, or misleading information are not allowed.</li>
+      <li>You are responsible for keeping your password safe.</li>
+      <li>Zensa is not responsible for unauthorized access caused by your negligence.</li>
+    </ul>
+
+    <h2>4. Posting Services / Ads</h2>
+    <ul>
+      <li>Your ad must be clear, honest, and real.</li>
+      <li>No fake, misleading, illegal, or adult content.</li>
+      <li>Zensa may remove any ad that violates rules or appears suspicious.</li>
+      <li>Do not post copyrighted content without permission.</li>
+    </ul>
+
+    <h2>5. Buying & Selling</h2>
+    <p>Zensa only provides a platform. We do not guarantee:</p>
+    <ul>
+      <li>The quality of services</li>
+      <li>Timely delivery</li>
+      <li>Payment safety between users</li>
+      <li>User identity verification</li>
+    </ul>
+    <p>Users must research and verify each other before making payments or deals.</p>
+
+    <h2>6. Payments</h2>
+    <ul>
+      <li>Zensa does NOT handle payments.</li>
+      <li>All payments are made directly between buyers and sellers.</li>
+      <li>Be careful before sending money to any user.</li>
+      <li>Zensa is not responsible for payment disputes.</li>
+    </ul>
+
+    <h2>7. Prohibited Activities</h2>
+    <ul>
+      <li>Posting illegal or harmful services</li>
+      <li>Scamming, fraud, or impersonation</li>
+      <li>Spam, harassment, or abusive content</li>
+      <li>Selling stolen items</li>
+      <li>Uploading viruses or harmful files</li>
+      <li>Attempting to hack or misuse the platform</li>
+    </ul>
+
+    <h2>8. Account & Ad Removal</h2>
+    <p>Zensa may suspend, remove, or block any account or ad that:</p>
+    <ul>
+      <li>Violates our policies</li>
+      <li>Uses fake information</li>
+      <li>Is involved in suspicious activity or scams</li>
+      <li>Misuses the platform</li>
+    </ul>
+
+    <h2>9. Safety Guidelines</h2>
+    <ul>
+      <li>Do not share your password or private details.</li>
+      <li>Avoid payments to unverified users.</li>
+      <li>Report suspicious users immediately.</li>
+      <li>Never download unknown files sent by strangers.</li>
+    </ul>
+
+    <h2>10. Third-Party Content</h2>
+    <p>Zensa is not responsible for content posted by users. All ads, images, descriptions, and claims are the sole
+      responsibility of the user who posted them.</p>
+
+    <h2>11. Modifications to Terms</h2>
+    <p>Zensa may update or change these Terms at any time. Continued use of the website means you accept the updated
+      Terms.</p>
+
+    <h2>12. Limitation of Liability</h2>
+    <p>Zensa is not responsible for:</p>
+    <ul>
+      <li>Loss of money</li>
+      <li>Scams by users</li>
+      <li>Incorrect information provided by users</li>
+      <li>Any disputes between buyers and sellers</li>
+    </ul>
+
+    <h2>13. Contact</h2>
+    <p>If you need help or want to report a user, please contact Zensa support.</p>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>About Zensa</h3>
+        <ul>
+          <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+          <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+          <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+          <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+          <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact & Sitemap</h3>
+        <ul>
+          <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+          <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+          <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Pricing</h3>
+        <ul>
+          <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+        <a href="#">DMCA.com Protection Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
