@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensa | Frequently Asked Questions</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ========== TERMS HERO SECTION ========== */
+    .hero-01 {
+      background: #111 !important;
+      color: #e63946;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+
+    .hero-01 h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-01 p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ========== CONTENT ========== */
+    .terms-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 60px;
+    }
+
+    .terms-content h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.6rem;
+      color: #111;
+      margin: 50px 0 15px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .terms-content h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #e63946;
+      margin-top: 8px;
+    }
+
+    .terms-content p,
+    .terms-content li {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .terms-content ul {
+      margin-left: 25px;
+      margin-top: 10px;
+      list-style: disc;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 70px 30px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======================= Navbar ============================= -->
+  <nav>
+    <div class="logo">
+      <img src="img/fav.png" alt="Brand Logo" />
+      <div class="logo-text"><span>Zen</span>sa</div>
+    </div>
+
+    <button class="menu-toggle">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="createAds.html">My Ads</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Our Pricing</a>
+      <a href="contact.html">Contact US</a>
+
+      <div class="dropdown" id="loginDropdown">
+        <button class="dropbtn">
+          <i class="ri-user-line"></i> <span id="loginText">Login</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+          <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+        </div>
+      </div>
+
+      <button class="create-btn" onclick="openCreateAd()">
+        Create Ad
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-01">
+    <h1>Frequently Asked Questions (FAQ)</h1>
+    <p>Updated November 2025 • Find clear answers to common questions.</p>
+  </section>
+
+  <!-- ========== FAQ CONTENT ========== -->
+  <section class="terms-content">
+
+    <h2>Welcome to the Zensa FAQ Page</h2>
+    <p>Here you’ll find answers to common questions about using Zensa. If you still need help, our support team is always
+      available.</p>
+
+    <h2>1. What is Zensa?</h2>
+    <p>Zensa is an online marketplace where users in Pakistan can buy and sell services. Whether you’re a skilled
+      professional or someone needing assistance, Zensa helps you connect safely and quickly.</p>
+
+    <h2>2. How do I create an account?</h2>
+    <ul>
+      <li>Click the “Sign Up” button</li>
+      <li>Enter your basic details</li>
+      <li>Verify your phone number or email</li>
+      <li>Start posting services or browsing ads</li>
+    </ul>
+    <p>Make sure the information you provide is correct, as fake accounts are not allowed.</p>
+
+    <h2>3. How do I post my service?</h2>
+    <ul>
+      <li>Log into your account</li>
+      <li>Click “Post Service”</li>
+      <li>Add clear photos, descriptions, and pricing</li>
+      <li>Submit for review</li>
+    </ul>
+    <p>Your service will appear once approved. Only real, honest, and clear ads are accepted.</p>
+
+    <h2>4. Is posting a service free?</h2>
+    <p>Yes, posting a service on Zensa is free. We may introduce optional premium features later.</p>
+
+    <h2>5. How do buyers contact me?</h2>
+    <ul>
+      <li>Through the chat option on your service page</li>
+      <li>Your shared contact details (if allowed)</li>
+    </ul>
+    <p>Never share your password or private information with anyone.</p>
+
+    <h2>6. Does Zensa handle payments?</h2>
+    <p>No. Payments are made directly between buyers and sellers. Always pay trusted users only.</p>
+
+    <h2>7. How can I stay safe on Zensa?</h2>
+    <ul>
+      <li>Avoid sending money to unverified users</li>
+      <li>Check seller information carefully</li>
+      <li>Report suspicious users immediately</li>
+      <li>Do not upload illegal or harmful content</li>
+    </ul>
+
+    <h2>8. What type of services are not allowed?</h2>
+    <ul>
+      <li>Illegal or harmful services</li>
+      <li>Adult content</li>
+      <li>Fraudulent or misleading listings</li>
+      <li>Spam or abusive behavior</li>
+      <li>Selling stolen items</li>
+      <li>Uploading malicious files</li>
+    </ul>
+
+    <h2>9. Why was my ad removed?</h2>
+    <ul>
+      <li>False or misleading information</li>
+      <li>Violating Zensa rules</li>
+      <li>Suspicious or harmful behavior</li>
+      <li>Scam-related activity</li>
+    </ul>
+    <p>Our team actively works to keep Zensa safe for everyone.</p>
+
+    <h2>10. Can my account be blocked?</h2>
+    <ul>
+      <li>Using a fake identity</li>
+      <li>Repeated rule violations</li>
+      <li>Scamming or fraudulent behavior</li>
+      <li>Posting harmful content</li>
+      <li>Misusing the platform</li>
+    </ul>
+    <p>You may contact support if you believe your account was blocked by mistake.</p>
+
+    <h2>11. How do I report a problem or user?</h2>
+    <ul>
+      <li>Click the “Report” button on their profile or ad</li>
+      <li>Contact our support team</li>
+      <li>Send complete details through the help center</li>
+    </ul>
+
+    <h2>12. How can I contact Zensa support?</h2>
+    <ul>
+      <li>Visit the “Support” section on the website</li>
+      <li>Use our contact form or email</li>
+      <li>Use the help-center chat</li>
+    </ul>
+    <p>We aim to respond as quickly as possible.</p>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>About Zensa</h3>
+        <ul>
+          <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+          <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+          <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+          <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+          <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact & Sitemap</h3>
+        <ul>
+          <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+          <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+          <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Pricing</h3>
+        <ul>
+          <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+        <a href="#">DMCA.com Protection Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

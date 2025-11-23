@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensa | Anti-Scam Policy</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hero-01 {
+      background: #111 !important;
+      color: #e63946;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+
+    .hero-01 h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-01 p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .terms-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 60px;
+    }
+
+    .terms-content h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.6rem;
+      color: #111;
+      margin: 50px 0 15px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .terms-content h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #e63946;
+      margin-top: 8px;
+    }
+
+    .terms-content p,
+    .terms-content li {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .terms-content ul {
+      margin-left: 25px;
+      margin-top: 10px;
+      list-style: disc;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 70px 30px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="img/fav.png" alt="Brand Logo" />
+      <div class="logo-text"><span>Zen</span>sa</div>
+    </div>
+
+    <button class="menu-toggle">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="createAds.html">My Ads</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Our Pricing</a>
+      <a href="contact.html">Contact US</a>
+
+      <div class="dropdown" id="loginDropdown">
+        <button class="dropbtn">
+          <i class="ri-user-line"></i> <span id="loginText">Login</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+          <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+        </div>
+      </div>
+
+      <button class="create-btn" onclick="openCreateAd()">
+        Create Ad
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-01">
+    <h1>Anti-Scam Policy</h1>
+    <p>Stay safe on Zensa • Updated November 2025</p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="terms-content">
+
+    <h2>Your Safety Comes First</h2>
+    <p>Zensa is committed to protecting users from fraud, scams, and harmful activities. Please read these guidelines
+      carefully to stay safe when buying or selling services on our platform.</p>
+
+    <h2>1. Common Scam Techniques</h2>
+    <p>Be aware of these common scam methods:</p>
+    <ul>
+      <li>Users asking for advance payments before providing any proof of work</li>
+      <li>Fake profiles using stolen photos or false information</li>
+      <li>Suspicious links or files sent through chat</li>
+      <li>Unrealistic offers or extremely low-priced services</li>
+      <li>Requests to move conversation outside Zensa</li>
+    </ul>
+
+    <h2>2. How to Protect Yourself</h2>
+    <p>Follow these simple steps to stay secure:</p>
+    <ul>
+      <li>Avoid paying anyone without verification</li>
+      <li>Never share personal information or passwords</li>
+      <li>Do not click unknown links sent by users</li>
+      <li>Check reviews, profiles, and service history before dealing</li>
+      <li>Use Zensa chat to communicate—avoid external messaging apps</li>
+    </ul>
+
+    <h2>3. Signs of a Fake or Suspicious User</h2>
+    <ul>
+      <li>No profile photo or incomplete information</li>
+      <li>Always rushing you to pay quickly</li>
+      <li>Unprofessional behavior or inconsistent answers</li>
+      <li>Not willing to provide any verification of identity or work</li>
+      <li>Making unrealistic promises (e.g., “100% guarantee in 1 hour”) </li>
+    </ul>
+
+    <h2>4. What to Avoid Doing</h2>
+    <ul>
+      <li>Do not send advance payments to unknown users</li>
+      <li>Do not share your login, OTP, or banking details</li>
+      <li>Do not accept suspicious files or download unknown attachments</li>
+      <li>Do not continue any deal if you feel uncomfortable or unsafe</li>
+    </ul>
+
+    <h2>5. What Zensa Does to Protect You</h2>
+    <p>We actively monitor the platform and take action against scammers by:</p>
+    <ul>
+      <li>Blocking accounts involved in suspicious activity</li>
+      <li>Removing harmful or fraudulent ads</li>
+      <li>Verifying user information when necessary</li>
+      <li>Responding quickly to reports and complaints</li>
+    </ul>
+
+    <h2>6. How to Report a Scam</h2>
+    <p>If you encounter suspicious activity:</p>
+    <ul>
+      <li>Click “Report User” on their profile or ad</li>
+      <li>Contact Zensa support with screenshots and details</li>
+      <li>Stop communication with the suspicious user immediately</li>
+    </ul>
+
+    <h2>7. Our Zero-Tolerance Policy</h2>
+    <p>Zensa takes scam-related behavior very seriously. Any user involved in fraud, deception, or harmful activities
+      will be permanently removed from the platform.</p>
+
+    <h2>Stay Safe, Stay Smart</h2>
+    <p>Your safety is our top priority. If something feels suspicious, trust your instincts and report it immediately.
+      Zensa is here to keep your experience safe and secure.</p>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>About Zensa</h3>
+        <ul>
+          <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+          <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+          <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+          <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+          <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact & Sitemap</h3>
+        <ul>
+          <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+          <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+          <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Pricing</h3>
+        <ul>
+          <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+        <a href="#">DMCA.com Protection Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
