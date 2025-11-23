@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensa | Pricing Plans</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---------- Isolated Pricing Page Styling ---------- */
+    .pricing-page {
+      background: #111;
+      padding: 80px 20px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .pricing-page h1 {
+      text-align: center;
+      color: #e63946;
+      margin-bottom: 8px;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .pricing-subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+    }
+
+    .pricing-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
+    }
+
+    .pricing-card {
+      background: #1b1b1b;
+      border: 1px solid #333;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #e63946;
+      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
+    }
+
+    .plan-badge {
+      background: #e63946;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .pricing-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .price-box {
+      margin: 15px 0 25px;
+    }
+
+    .old-price {
+      font-size: 0.9rem;
+      color: #777;
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e63946;
+    }
+
+    .pricing-features {
+      text-align: left;
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+    }
+
+    .pricing-features li {
+      padding: 6px 0;
+      font-size: 0.98rem;
+      color: #ddd;
+    }
+
+    .pricing-features li::before {
+      content: "✔";
+      color: #2ecc71;
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+
+    .pricing-btn {
+      width: 100%;
+      background: #e63946;
+      border: none;
+      padding: 14px 20px;
+      color: white;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 15px;
+    }
+
+    .pricing-btn:hover {
+      background: #ff4d5a;
+      transform: translateY(-3px);
+    }
+
+    /* Fix footer overlapping */
+    #footer {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <style>
+    /* keep your entire CSS here (unchanged) */
+  </style>
+
+  <nav>
+    <div class="logo">
+      <img src="img/fav.png" alt="Brand Logo" />
+      <div class="logo-text"><span>Zen</span>sa</div>
+    </div>
+
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="createAds.html">My Ads</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Our Pricing</a>
+      <a href="contact.html">Contact US</a>
+
+      <div class="dropdown" id="loginDropdown">
+        <button class="dropbtn">
+          <i class="ri-user-line"></i> <span id="loginText">Login</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+          <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+        </div>
+      </div>
+
+      <div class="user-info" id="userInfo" style="display:none;">
+        <i class="ri-user-line"></i> <span id="userName"></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+
+      <button class="create-btn" onclick="openCreateAd()">
+        Create Ad
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- PRICING SECTION -->
+  <section class="pricing-page">
+    <h1>Zensa Premium Plans</h1>
+    <p class="pricing-subtitle">Boost your visibility • Get more clients • Sell faster</p>
+
+    <div class="pricing-wrapper">
+
+      <!-- Starter Plan -->
+      <div class="pricing-card">
+        <span class="plan-badge">First Month FREE</span>
+        <h2>Starter Plan</h2>
+
+        <div class="price-box">
+          <div class="new-price">PKR 0</div>
+        </div>
+
+        <ul class="pricing-features">
+          <li>Unlimited ads</li>
+          <li>Basic visibility</li>
+          <li>Appear in regular search</li>
+          <li>Messages & account access</li>
+          <li>No credit card required</li>
+        </ul>
+
+        <button class="pricing-btn plan-btn" data-plan="Starter">Get Started</button>
+      </div>
+
+      <!-- Plus Plan -->
+      <div class="pricing-card">
+        <span class="plan-badge">Most Popular</span>
+        <h2>Plus Plan</h2>
+
+        <div class="price-box">
+          <div class="old-price">Rs 4,000</div>
+          <div class="new-price">Rs 1,000</div>
+        </div>
+
+        <ul class="pricing-features">
+          <li>1 Week Top Ad</li>
+          <li>Premium Badge</li>
+          <li>Highlighted Listing</li>
+          <li>No third-party ads</li>
+          <li>50% more visibility</li>
+        </ul>
+
+        <button class="pricing-btn plan-btn" data-plan="Plus">Upgrade Now</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing-card">
+        <span class="plan-badge">Best for Professionals</span>
+        <h2>Pro Plan</h2>
+
+        <div class="price-box">
+          <div class="old-price">Rs 8,000</div>
+          <div class="new-price">Rs 2,500</div>
+        </div>
+
+        <ul class="pricing-features">
+          <li>1 Month Top Ad</li>
+          <li>2 Weeks Premium Ad</li>
+          <li>Gallery Feature</li>
+          <li>Pole Position</li>
+          <li>Maximum visibility</li>
+        </ul>
+
+        <button class="pricing-btn plan-btn" data-plan="Pro">Go Pro</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <!-- ============================== FOOTER SECTION ============================== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- About / Info -->
+      <div class="footer-col">
+        <h3>About Zensa</h3>
+        <ul>
+          <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+          <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+          <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+          <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+          <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3>Contact & Sitemap</h3>
+        <ul>
+          <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+          <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+        </ul>
+      </div>
+
+      <!-- Account -->
+      <div class="footer-col">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+          <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+        </ul>
+      </div>
+
+      <!-- Pricing -->
+      <div class="footer-col">
+        <h3>Pricing</h3>
+        <ul>
+          <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+        <a href="#">DMCA.com Protection Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+<script src="script.js"></script>
+</body>
+
+</html>
