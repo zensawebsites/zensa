@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zensa | Create Ad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<style>
+    :root {
+        --primary: #e63946;
+        --primary-dark: #b82834;
+        --text-dark: #1a1a1a;
+        --text-light: #6b6b6b;
+        --bg-light: #f6f7fb;
+        --bg-white: #fff;
+        --shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        --radius: 14px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
+        color: var(--text-dark);
+    }
+
+    /* ========== TERMS HERO SECTION ========== */
+    .hero-01 {
+        background: #191919;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 20px !important;
+        color: #e63946;
+        text-align: center;
+        padding: 100px 20px 80px;
+    }
+
+    .hero-01 h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .hero-01 p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+
+    .ad-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 30px;
+        flex-wrap: wrap;
+    }
+
+    /* FORM */
+    .ad-form {
+        flex: 1.2;
+        background: var(--bg-white);
+        border-radius: var(--radius);
+        padding: 35px;
+        box-shadow: var(--shadow);
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: #f9f9f9;
+        transition: 0.3s;
+        font-size: 0.95rem;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: var(--primary);
+        background: #fff;
+        outline: none;
+        box-shadow: 0 0 4px rgba(230, 57, 70, 0.2);
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .photo-box {
+        width: 130px;
+        height: 130px;
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        color: #888;
+        background: #fafafa;
+        transition: 0.3s;
+    }
+
+    .photo-box:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        background: #fff;
+    }
+
+    .photo-box i {
+        font-size: 2rem;
+        margin-bottom: 4px;
+    }
+
+    .btn {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: white;
+        border: none;
+        padding: 14px;
+        width: 100%;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: linear-gradient(135deg, #ff4d5a, #c82b38);
+    }
+
+    .form-footer {
+        text-align: center;
+        margin-top: 10px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+
+    .form-footer a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    /* PREVIEW */
+    .ad-preview {
+        flex: 1;
+        background: var(--bg-white);
+        border-radius: var(--radius);
+        padding: 25px;
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+
+    .ad-preview h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+    }
+
+    .preview-image {
+        width: 100%;
+        height: 240px;
+        border-radius: 12px;
+        background: #f2f2f2;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .preview-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .ad-preview h4 {
+        margin-bottom: 6px;
+        color: var(--text-dark);
+    }
+
+    .ad-preview p {
+        color: var(--text-light);
+        margin-bottom: 5px;
+    }
+
+    .ad-preview strong {
+        color: var(--text-dark);
+    }
+
+    @media (max-width: 900px) {
+        .ad-container {
+            flex-direction: column;
+        }
+
+        .ad-preview {
+            position: static;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <!-- ====================== Nav BAr =================== -->
+
+    <style>
+        /* keep your entire CSS here (unchanged) */
+    </style>
+
+    <nav>
+        <div class="logo">
+            <img src="img/fav.png" alt="Brand Logo" />
+            <div class="logo-text"><span>Zen</span>sa</div>
+        </div>
+
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="createAds.html">My Ads</a>
+            <a href="about.html">About Us</a>
+            <a href="pricing.html">Our Pricing</a>
+            <a href="contact.html">Contact US</a>
+
+            <div class="dropdown" id="loginDropdown">
+                <button class="dropbtn">
+                    <i class="ri-user-line"></i> <span id="loginText">Login</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+                    <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+                </div>
+            </div>
+
+            <div class="user-info" id="userInfo" style="display:none;">
+                <i class="ri-user-line"></i> <span id="userName"></span>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+
+            <button class="create-btn" onclick="openCreateAd()">
+                Create Ad
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- ================== hero =============== -->
+
+    <section class="hero-01">
+        <h1>Post Your Ad</h1>
+        <p>Showcase your listing to thousands of trusted buyers on Zensa.</p>
+    </section>
+
+
+    <!-- ============== ads form ======================== -->
+
+    <section class="ad-container">
+        <!-- Form Left -->
+        <div class="ad-form">
+            <form id="createAdForm">
+                <div class="form-group">
+                    <label>Category *</label>
+                    <select id="category" required>
+                        <option value="">Select a category</option>
+                        <option>Electronics</option>
+                        <option>Vehicles</option>
+                        <option>Real Estate</option>
+                        <option>Jobs</option>
+                        <option>Services</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ad Title *</label>
+                    <input type="text" id="title" placeholder="Enter a catchy title" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="description" placeholder="Describe your product or service..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>City *</label>
+                    <select id="city" required>
+                        <option value="">Select your city</option>
+                        <option>Karachi</option>
+                        <option>Lahore</option>
+                        <option>Islamabad</option>
+                        <option>Faisalabad</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tags</label>
+                    <input type="text" id="tags" placeholder="e.g. iPhone, Used, Apple" />
+                </div>
+
+                <div class="form-group">
+                    <label>Starting Price (PKR) *</label>
+                    <input type="number" id="price" placeholder="Enter your starting price" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Photo *</label>
+                    <label for="photoInput" class="photo-box">
+                        <i class="ri-image-add-line"></i>
+                        <span>Upload</span>
+                    </label>
+                    <input type="file" id="photoInput" accept="image/*" hidden required />
+                    <p id="uploadStatus" style="color:#777;font-size:14px;margin-top:6px;"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="03xxxxxxxxx" required />
+                </div>
+
+                <button class="btn" type="submit">Publish Ad</button>
+                <p class="form-footer">By publishing, you agree to our <a href="#">Terms & Conditions</a>.</p>
+            </form>
+        </div>
+
+        <!-- Preview Right -->
+        <div class="ad-preview">
+            <h3>Live Ad Preview</h3>
+            <div class="preview-image">
+                <img id="previewImage" src="https://via.placeholder.com/400x250?text=Your+Ad+Image" alt="">
+            </div>
+            <h4 id="previewTitle">Your ad title will appear here</h4>
+            <p id="previewDescription">Start typing your ad details to see how it looks to buyers.</p>
+            <p><strong>City:</strong> <span id="previewCity">Not selected</span></p>
+            <p><strong>Tags:</strong> <span id="previewTags">None</span></p>
+            <p><strong>Phone:</strong> <span id="previewPhone">---</span></p>
+            <p><strong>Price:</strong> PKR <span id="previewPrice">---</span></p>
+        </div>
+    </section>
+
+    <script>
+        // Configuration
+        const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwMf4oEiZbDk-W9_CvjYVlStJzevGnzd-OH_4Wg1wq2UyH5-wnjnaO_XZ73a9f61VdKbA/exec";
+        const IMGBB_API_KEY = "5ae8e940ba09caf06819fe4bb5be9603";
+
+        // Elements
+        const form = document.getElementById("createAdForm");
+        const photoInput = document.getElementById("photoInput");
+        const previewImage = document.getElementById("previewImage");
+        const uploadStatus = document.getElementById("uploadStatus");
+
+        const inputs = {
+            category: document.getElementById("category"),
+            title: document.getElementById("title"),
+            description: document.getElementById("description"),
+            city: document.getElementById("city"),
+            tags: document.getElementById("tags"),
+            price: document.getElementById("price"),
+            phone: document.getElementById("phone"),
+        };
+
+        const updatePreview = (id, value, fallback) => {
+            document.getElementById(id).textContent = value || fallback;
+        };
+
+        // Live Preview
+        inputs.title.addEventListener("input", () => updatePreview("previewTitle", inputs.title.value, "Your ad title will appear here"));
+        inputs.description.addEventListener("input", () => updatePreview("previewDescription", inputs.description.value, "Start typing your ad details..."));
+        inputs.city.addEventListener("change", () => updatePreview("previewCity", inputs.city.value, "Not selected"));
+        inputs.tags.addEventListener("input", () => updatePreview("previewTags", inputs.tags.value, "None"));
+        inputs.price.addEventListener("input", () => updatePreview("previewPrice", inputs.price.value, "---"));
+        inputs.phone.addEventListener("input", () => updatePreview("previewPhone", inputs.phone.value, "---"));
+
+        // Image Upload to ImgBB
+        let uploadedImageUrl = "";
+        photoInput.addEventListener("change", async () => {
+            const file = photoInput.files[0];
+            if (!file) return;
+
+            previewImage.src = URL.createObjectURL(file);
+            uploadStatus.textContent = "⏳ Uploading image...";
+
+            const formData = new FormData();
+            formData.append("image", file);
+
+            try {
+                const res = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                    method: "POST",
+                    body: formData,
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    uploadedImageUrl = data.data.url;
+                    uploadStatus.textContent = "✅ Image uploaded successfully!";
+                } else {
+                    uploadStatus.textContent = "❌ Upload failed. Try again.";
+                }
+            } catch (err) {
+                uploadStatus.textContent = "⚠️ Network or upload error.";
+            }
+        });
+
+        // Submit Form
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            if (!uploadedImageUrl) {
+                alert("⚠️ Please wait — image is still uploading or missing!");
+                return;
+            }
+
+            const data = {
+                category: inputs.category.value,
+                title: inputs.title.value,
+                description: inputs.description.value,
+                city: inputs.city.value,
+                tags: inputs.tags.value,
+                price: inputs.price.value,
+                phone: inputs.phone.value,
+                image: uploadedImageUrl,
+                date: new Date().toLocaleString(),
+            };
+
+            try {
+                await fetch(GOOGLE_SHEET_WEBAPP_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+
+                alert("✅ Ad Published Successfully!");
+                form.reset();
+                previewImage.src = "https://via.placeholder.com/400x250?text=Your+Ad+Image";
+                uploadStatus.textContent = "";
+                uploadedImageUrl = "";
+            } catch (error) {
+                alert("⚠️ Error sending data. Please check your internet or Script URL.");
+            }
+        });
+    </script>
+
+    <!-- ============================== FOOTER SECTION ============================== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- About / Info -->
+            <div class="footer-col">
+                <h3>About Zensa</h3>
+                <ul>
+                    <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+                    <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+                    <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+                    <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+                    <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col">
+                <h3>Contact & Sitemap</h3>
+                <ul>
+                    <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+                    <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Account -->
+            <div class="footer-col">
+                <h3>My Account</h3>
+                <ul>
+                    <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+                    <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+                </ul>
+            </div>
+
+            <!-- Pricing -->
+            <div class="footer-col">
+                <h3>Pricing</h3>
+                <ul>
+                    <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+                <a href="#">DMCA.com Protection Status</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Navbar functionality -->
+    <script src="script.js"></script>
+</body>
+
+</html>
