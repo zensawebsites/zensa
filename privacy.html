@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensa | Privacy Policy</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .hero-01 {
+      background: #111 !important;
+      color: #e63946;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+    .hero-01 h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero-01 p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .terms-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 60px;
+    }
+    .terms-content h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.6rem;
+      margin: 50px 0 15px;
+      font-weight: 600;
+      position: relative;
+    }
+    .terms-content h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #e63946;
+      margin-top: 8px;
+    }
+    .terms-content p,
+    .terms-content li {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .terms-content ul {
+      margin-left: 25px;
+      margin-top: 10px;
+      list-style: disc;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 70px 30px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="img/fav.png" alt="Brand Logo" />
+      <div class="logo-text"><span>Zen</span>sa</div>
+    </div>
+    <button class="menu-toggle"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="createAds.html">My Ads</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Our Pricing</a>
+      <a href="contact.html">Contact US</a>
+      <div class="dropdown" id="loginDropdown">
+        <button class="dropbtn"><i class="ri-user-line"></i> <span id="loginText">Login</span> <i class="ri-arrow-down-s-line"></i></button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="ri-login-box-line"></i> Login</a>
+          <a href="register.html"><i class="ri-user-add-line"></i> Sign Up</a>
+        </div>
+      </div>
+      <button class="create-btn" onclick="openCreateAd()">Create Ad</button>
+    </div>
+  </nav>
+
+  <section class="hero-01">
+    <h1>Privacy Policy</h1>
+    <p>How we protect your data • Updated November 2025</p>
+  </section>
+
+  <section class="terms-content">
+    <h2>1. Introduction</h2>
+    <p>At Zensa, your privacy is extremely important to us. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>We may collect the following types of information:</p>
+    <ul>
+      <li>Account details (name, email, phone number)</li>
+      <li>Uploaded content (ads, images, descriptions)</li>
+      <li>Device and browser information</li>
+      <li>Location data (if permitted)</li>
+      <li>Payment-related information when using paid services</li>
+    </ul>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>Your information is used to:</p>
+    <ul>
+      <li>Provide and improve our services</li>
+      <li>Verify accounts and prevent scams</li>
+      <li>Customize your user experience</li>
+      <li>Send important notifications and updates</li>
+      <li>Process payments securely</li>
+    </ul>
+
+    <h2>4. Sharing Your Information</h2>
+    <p>We do <strong>not</strong> sell your personal data. We may share it only with:</p>
+    <ul>
+      <li>Trusted service providers (payment gateways, analytics tools)</li>
+      <li>Law enforcement when required by law</li>
+      <li>Third parties only with your consent</li>
+    </ul>
+
+    <h2>5. Cookies & Tracking</h2>
+    <p>We use cookies to enhance your experience on our platform. You can disable cookies in your browser settings, but some features may not work properly.</p>
+
+    <h2>6. Data Security</h2>
+    <p>We use advanced security measures to protect your account and personal information from unauthorized access.</p>
+
+    <h2>7. Your Rights</h2>
+    <ul>
+      <li>Access your personal data</li>
+      <li>Request corrections</li>
+      <li>Delete your account</li>
+      <li>Opt out of marketing communications</li>
+    </ul>
+
+    <h2>8. Children's Safety</h2>
+    <p>Zensa is not intended for users under the age of 16. We do not knowingly collect data from minors.</p>
+
+    <h2>9. Updates to This Privacy Policy</h2>
+    <p>We may update this policy occasionally. Continued use of the platform means you accept the new changes.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>If you have questions or requests related to privacy, contact us at <strong>support@zensa.com</strong>.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>About Zensa</h3>
+        <ul>
+          <li><a href="about.html"><i class="ri-information-line"></i> About Us</a></li>
+          <li><a href="FAQ.html"><i class="ri-question-line"></i> FAQ</a></li>
+          <li><a href="AntiScaam.html"><i class="ri-shield-keyhole-line"></i> Anti-Scam</a></li>
+          <li><a href="term.html"><i class="ri-file-list-line"></i> Terms</a></li>
+          <li><a href="privacy.html"><i class="ri-lock-line"></i> Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact & Sitemap</h3>
+        <ul>
+          <li><a href="contact.html"><i class="ri-customer-service-2-line"></i> Contact Us</a></li>
+          <li><a href="siteMap.html"><i class="ri-map-pin-line"></i> Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="login.html"><i class="ri-login-circle-line"></i> Log In</a></li>
+          <li><a href="register.html"><i class="ri-user-add-line"></i> Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Pricing</h3>
+        <ul>
+          <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Our Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Zensa</span>. All Rights Reserved.
+        <a href="#">DMCA.com Protection Status</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
